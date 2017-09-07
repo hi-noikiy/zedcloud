@@ -33,11 +33,13 @@
 
 <body>
 
+
 <div class="container-fluid">
     <div class="row ">
         <div class="col-sm-3 col-md-2 sidebar admin-menu">
              <ul class="nav nav-sidebar">
-
+                <li id="hideid" class="first"><a class="{{ Route::currentRouteNamed('shop.shop.index') ? 'active' : null }}" href="{{ route('shop.shop.index') }}"><span class="glyphicon glyphicon-file"></span>门店管理</a></li>
+           
                 <li class="first"><a class="{{ Route::currentRouteNamed('index.index.list') ? 'active' : null }}" href="{{ route('index.index.list') }}"><span class="glyphicon glyphicon-file"></span>首页管理</a></li>
                 <li class="first"><a class="{{ Route::currentRouteNamed('album.album.list') ? 'active' : null }}" href="{{ route('album.album.list') }}"><span class="glyphicon glyphicon-file"></span>相册管理</a></li>
 <!--                 <li class="first"><a class="{{ Route::currentRouteNamed('product.category.list') ? 'active' : null }}" href="{{ route('product.category.list') }}"><span class="glyphicon glyphicon-minus-sign"></span>商品类型</a></li> -->
@@ -92,7 +94,9 @@
 				 .submenu{
 				 	display:none;
 				 }
-				 
+				 #hideid{
+				 	display:none;
+				 }
 				 ul.active-sub{
 				 	display:block;
 				 }
@@ -116,6 +120,7 @@
 			</style>
 			
 			<script>
+			/*
 				$(".nav-sidebar .first").on("click",function(){
 					if($(this).find('.active').length > 0){
 						
@@ -129,7 +134,7 @@
 				if($(".nav-sidebar .active").parents(".submenu li").length > 0){
 					$(".nav-sidebar .active").parents(".submenu").show();
 				}
-	
+	*/
 	
 			</script>
             
@@ -314,7 +319,14 @@
 
 
 
-
+<script>
+$('#hideid').hide();
+var com = "{{company_id()}}";
+if(com == 1)
+{
+	$('#hideid').show();
+}
+</script>
 
 
 

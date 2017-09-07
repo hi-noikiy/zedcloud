@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <title>小牛儿智慧商店</title>
+    <title>小蜗牛云平台</title>
        <!-- Bootstrap core CSS -->
        
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
